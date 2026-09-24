@@ -60,7 +60,7 @@ body{margin:0;background:#fff;color:#000;font-family:var(--body-stack)}
 .doc sup{font-size:80%;line-height:1;vertical-align:super}
 .doc i{font-style:italic}
 
-.h2,.h3,.h4{font-family:var(--display);color:#000;letter-spacing:normal}
+.h2,.h3,.h4,.h5{font-family:var(--display);color:#000;letter-spacing:normal}
 .h2{border-bottom:2px solid var(--rule);display:flow-root}
 
 blockquote.pull{border-left:3px solid #d8d2c8;padding:0.1em 0 0.1em 1em;margin:1.5em 0}
@@ -103,6 +103,7 @@ table.wt th{background:#fff;font-weight:600}
 .mode-current .h2{font-size:27.36px;font-weight:500;line-height:1.4;margin:1.25em 0 0.5em}
 .mode-current .h3{font-size:24.32px;font-weight:400;line-height:1.125;margin:1.25em 0 0.5em}
 .mode-current .h4{font-size:21.28px;font-weight:400;line-height:1.125;margin:1.25em 0 0.5em}
+.mode-current .h5{font-size:19px;font-weight:400;line-height:1.125;margin:1.25em 0 0.5em}
 
 
 /* ===== minor third, 1.2 ===== */
@@ -110,6 +111,7 @@ table.wt th{background:#fff;font-weight:600}
 .mode-minor .h2{font-size:27.65px;font-weight:600;line-height:1.25;margin:1.5em 0 0.45em}
 .mode-minor .h3{font-size:23.04px;font-weight:600;line-height:1.3;margin:1.6em 0 0.4em}
 .mode-minor .h4{font-size:19.2px;font-weight:600;line-height:1.35;margin:1.7em 0 0.35em}
+.mode-minor .h5{font-size:16px;font-weight:600;line-height:1.4;margin:1.7em 0 0.35em}
 
 
 
@@ -118,12 +120,14 @@ table.wt th{background:#fff;font-weight:600}
 .mode-second .h2{font-size:19.44px;font-weight:600;line-height:1.3;margin:1.5em 0 0.45em}
 .mode-second .h3{font-size:18.22px;font-weight:600;line-height:1.35;margin:1.6em 0 0.4em}
 .mode-second .h4{font-size:17.07px;font-weight:600;line-height:1.4;margin:1.7em 0 0.35em}
+.mode-second .h5{font-size:16px;font-weight:600;line-height:1.4;margin:1.7em 0 0.35em}
 
 /* ===== wikipedia, Vector ===== */
 .mode-wiki .doc{font-size:16px;line-height:1.6}
 .mode-wiki .h2{font-family:var(--serif);font-size:24px;font-weight:400;line-height:1.375;margin:1em 0 0.25em;border-bottom:1px solid #a2a9b1}
 .mode-wiki .h3{font-size:19.2px;font-weight:700;line-height:1.6;margin:1em 0 0.25em}
 .mode-wiki .h4{font-size:16px;font-weight:700;line-height:1.6;margin:1em 0 0.25em}
+.mode-wiki .h5{font-size:16px;font-weight:700;line-height:1.6;margin:1em 0 0.25em}
 
 
 
@@ -135,12 +139,14 @@ table.wt th{background:#fff;font-weight:600}
 .mode-m2 .h2{font-size:28px;font-weight:700;line-height:1.25;margin:1.25em 0 0.5em}
 .mode-m2 .h3{font-size:24px;font-weight:600;line-height:1.35;margin:1.25em 0 0.5em}
 .mode-m2 .h4{font-size:18px;font-weight:500;line-height:1.4;margin:1.25em 0 0.5em}
+.mode-m2 .h5{font-size:16px;font-weight:600;line-height:1.4;margin:1.25em 0 0.5em}
 
 /* ===== alternate ===== */
 .mode-alt .doc{font-size:16px;line-height:1.6}
 .mode-alt .h2{font-size:26px;font-weight:600;line-height:1.25;margin:1.25em 0 0.5em}
 .mode-alt .h3{font-size:20px;font-weight:600;line-height:1.35;margin:1.25em 0 0.5em}
 .mode-alt .h4{font-size:13px;font-weight:600;font-style:italic;line-height:1.4;text-transform:uppercase;color:#4a4a4a;margin:1.25em 0 0.5em}
+.mode-alt .h5{font-size:12px;font-weight:600;line-height:1.4;text-transform:uppercase;color:#4a4a4a;margin:1.25em 0 0.5em}
 
 @media (max-width:900px){.specimens{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:720px){.content{padding:1.25rem 1rem 2rem}.specimens{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -158,7 +164,7 @@ table.wt th{background:#fff;font-weight:600}
       <button type="button" data-mode="mode-second" aria-pressed="false">Minor second</button>
       <button type="button" data-mode="mode-wiki" aria-pressed="false">Wikipedia</button>
     </div>
-    <span class="readout" id="readout">body 16px 1em, 28, 24, 18</span>
+    <span class="readout" id="readout">body 16px 1em, 28, 24, 18, 16</span>
   </div>
 </div>
 
@@ -166,11 +172,12 @@ table.wt th{background:#fff;font-weight:600}
 
 
   <div class="spec" id="spec-mode-m2">
-    <div class="spec-hd"><b>Jet’s Proposal</b><span>28, 24, 18, body 16</span></div>
+    <div class="spec-hd"><b>Jet’s Proposal</b><span>28, 24, 18, 16, body 16</span></div>
     <div class="spec-body">
       <div class="spec-row"><span class="spec-sample" style="font-size:28px;font-weight:700">Background</span><span class="spec-meta">h2, 28px, 1.75em, 700</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:24px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 24px, 1.5em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:18px;font-weight:500">Tencendur</span><span class="spec-meta">h4, 18px, 1.125em, 500</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:16px;font-weight:600;">Potestas Station</span><span class="spec-meta">h5, 16px, 1em, 600</span></div>
       <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
     </div>
   </div>
@@ -181,32 +188,35 @@ table.wt th{background:#fff;font-weight:600}
 
 
   <div class="spec" id="spec-mode-alt">
-    <div class="spec-hd"><b>Alternate</b><span>26, 20, 13, body 16</span></div>
+    <div class="spec-hd"><b>Alternate</b><span>26, 20, 13, 12, body 16</span></div>
     <div class="spec-body">
       <div class="spec-row"><span class="spec-sample" style="font-size:26px;font-weight:600">Background</span><span class="spec-meta">h2, 26px, 1.625em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:20px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 20px, 1.25em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:13px;font-weight:600;font-style:italic;text-transform:uppercase;color:#4a4a4a">Tencendur</span><span class="spec-meta">h4, 13px, 0.813em, 600 caps italic</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:12px;font-weight:600;text-transform:uppercase;color:#4a4a4a;">Potestas Station</span><span class="spec-meta">h5, 12px, 0.75em, 600 caps</span></div>
       <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
     </div>
   </div>
 
   <div class="spec" id="spec-mode-current">
-    <div class="spec-hd"><b>Current</b><span>27.36, 24.32, 21.28, body 15.2</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+    <div class="spec-hd"><b>Current</b><span>27.36, 24.32, 21.28, 19, body 15.2</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
     <div class="spec-body">
       <div class="spec-row"><span class="spec-sample" style="font-size:27.36px;font-weight:500">Background</span><span class="spec-meta">h2, 27.36px, 1.8em, 500</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:24.32px;font-weight:400">Boarding Operations</span><span class="spec-meta">h3, 24.32px, 1.6em, 400</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:21.28px;font-weight:400">Tencendur</span><span class="spec-meta">h4, 21.28px, 1.4em, 400</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:19px;font-weight:400;">Potestas Station</span><span class="spec-meta">h5, 19px, 1.25em, 400</span></div>
       <div class="spec-row"><span class="spec-base" style="font-size:15.2px">Body copy sets here.</span><span class="spec-meta">body, 15.2px, 0.95em, 400</span></div>
     </div>
   </div>
 
 
   <div class="spec" id="spec-mode-minor">
-    <div class="spec-hd"><b>Minor third</b><span>27.65, 23.04, 19.2, body 16</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+    <div class="spec-hd"><b>Minor third</b><span>27.65, 23.04, 19.2, 16, body 16</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
     <div class="spec-body">
       <div class="spec-row"><span class="spec-sample" style="font-size:27.65px;font-weight:600">Background</span><span class="spec-meta">h2, 27.65px, 1.728em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:23.04px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 23.04px, 1.44em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:19.2px;font-weight:600">Tencendur</span><span class="spec-meta">h4, 19.2px, 1.2em, 600</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:16px;font-weight:600;">Potestas Station</span><span class="spec-meta">h5, 16px, 1em, 600</span></div>
       <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
     </div>
   </div>
@@ -214,21 +224,23 @@ table.wt th{background:#fff;font-weight:600}
 
 
   <div class="spec" id="spec-mode-second">
-    <div class="spec-hd"><b>Minor second</b><span>19.44, 18.22, 17.07, body 16</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+    <div class="spec-hd"><b>Minor second</b><span>19.44, 18.22, 17.07, 16, body 16</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
     <div class="spec-body">
       <div class="spec-row"><span class="spec-sample" style="font-size:19.44px;font-weight:600">Background</span><span class="spec-meta">h2, 19.44px, 1.215em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:18.22px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 18.22px, 1.138em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:17.07px;font-weight:600">Tencendur</span><span class="spec-meta">h4, 17.07px, 1.067em, 600</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:16px;font-weight:600;">Potestas Station</span><span class="spec-meta">h5, 16px, 1em, 600</span></div>
       <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
     </div>
   </div>
 
   <div class="spec" id="spec-mode-wiki">
-    <div class="spec-hd"><b>Wikipedia</b><span>24, 19.2, 16, body 16</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+    <div class="spec-hd"><b>Wikipedia</b><span>24, 19.2, 16, 16, body 16</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
     <div class="spec-body">
       <div class="spec-row"><span class="spec-sample" style="font-family:var(--serif);font-size:24px;font-weight:400">Background</span><span class="spec-meta">h2, 24px, 1.5em, 400 serif</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:19.2px;font-weight:700">Boarding Operations</span><span class="spec-meta">h3, 19.2px, 1.2em, 700</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:16px;font-weight:700">Tencendur</span><span class="spec-meta">h4, 16px, 1em, 700</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:16px;font-weight:700;">Potestas Station</span><span class="spec-meta">h5, 16px, 1em, 700</span></div>
       <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
     </div>
   </div>
@@ -320,6 +332,14 @@ table.wt th{background:#fff;font-weight:600}
 
   <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+  <div class="h5">Fifth Level Heading</div>
+
+  <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+  <div class="h5">Another Fifth Level Heading</div>
+
+  <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
+
   <div class="h4">Another Sub-subsection</div>
 
   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
@@ -337,6 +357,8 @@ table.wt th{background:#fff;font-weight:600}
   <div class="h4">Nested Once</div>
 
   <div class="h4">Nested Twice, No Prose Between</div>
+
+  <div class="h5">Five Deep, No Prose Between</div>
 
   <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.</p>
 
@@ -468,12 +490,12 @@ table.wt th{background:#fff;font-weight:600}
 
 <script>
 var readouts = {
-  'mode-alt':      'body 16px 1em, 26, 20, 13 caps',
-  'mode-m2':       'body 16px 1em, 28, 24, 18',
-  'mode-current':  'body 15.2px 0.95em, 27.36, 24.32, 21.28',
-  'mode-minor':    'body 16px 1em, 27.65, 23.04, 19.2',
-  'mode-second':   'body 16px 1em, 19.44, 18.22, 17.07',
-  'mode-wiki':     'body 16px 1em, 24, 19.2, 16'
+  'mode-alt':      'body 16px 1em, 26, 20, 13 caps, 12 caps',
+  'mode-m2':       'body 16px 1em, 28, 24, 18, 16',
+  'mode-current':  'body 15.2px 0.95em, 27.36, 24.32, 21.28, 19',
+  'mode-minor':    'body 16px 1em, 27.65, 23.04, 19.2, 16',
+  'mode-second':   'body 16px 1em, 19.44, 18.22, 17.07, 16',
+  'mode-wiki':     'body 16px 1em, 24, 19.2, 16, 16'
 };
 function setMode(mode){
   document.body.className = mode;
@@ -494,7 +516,7 @@ document.querySelectorAll('.spec').forEach(function(card){
 setMode('mode-m2');
 function buildToc(){
   var root = document.createElement('ul'), stack = [{rank:1, ul:root, n:0}];
-  document.querySelectorAll('.doc .h2, .doc .h3, .doc .h4').forEach(function(h, i){
+  document.querySelectorAll('.doc .h2, .doc .h3, .doc .h4, .doc .h5').forEach(function(h, i){
     var rank = +h.className.match(/h(\d)/)[1];
     while (stack.length > 1 && stack[stack.length-1].rank >= rank) stack.pop();
     var top = stack[stack.length-1];
