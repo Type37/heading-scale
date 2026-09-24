@@ -158,7 +158,7 @@ table.wt th{background:#fff;font-weight:600}
   <div class="bar-inner">
     <div role="group" aria-label="Choose type system" style="display:flex;gap:0.5rem;flex-wrap:wrap">
       <button type="button" data-mode="mode-m2" aria-pressed="true">Jet’s Proposal</button>
-      <button type="button" data-mode="mode-alt" aria-pressed="false">Alternate</button>
+      <button type="button" data-mode="mode-alt" aria-pressed="false">Jet’s Alternate Proposal</button>
       <button type="button" data-mode="mode-current" aria-pressed="false">Current</button>
       <button type="button" data-mode="mode-minor" aria-pressed="false">Minor third</button>
       <button type="button" data-mode="mode-second" aria-pressed="false">Minor second</button>
@@ -188,7 +188,7 @@ table.wt th{background:#fff;font-weight:600}
 
 
   <div class="spec" id="spec-mode-alt">
-    <div class="spec-hd"><b>Alternate</b><span>26, 20, 13, 12, body 16</span></div>
+    <div class="spec-hd"><b>Jet’s Alternate Proposal</b><span>26, 20, 13, 12, body 16</span></div>
     <div class="spec-body">
       <div class="spec-row"><span class="spec-sample" style="font-size:26px;font-weight:600">Background</span><span class="spec-meta">h2, 26px, 1.625em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:20px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 20px, 1.25em, 600</span></div>
@@ -523,6 +523,7 @@ function buildToc(){
     top.n++;
     h.id = 'h-' + i;
     var li = document.createElement('li');
+    li.className = 'toclevel-' + stack.length;
     li.innerHTML = '<a href="#h-' + i + '"><span class="tocnumber"></span><span class="toctext"></span></a>';
     li.querySelector('.tocnumber').textContent = stack.map(function(x){ return x.n; }).join('.');
     li.querySelector('.toctext').textContent = h.textContent;
@@ -531,6 +532,7 @@ function buildToc(){
     li.appendChild(sub);
     stack.push({rank:rank, ul:sub, n:0});
   });
+  root.querySelectorAll('.toclevel-2 > ul').forEach(function(u){ u.remove(); });
   root.querySelectorAll('ul:empty').forEach(function(u){ u.remove(); });
   document.getElementById('toc').appendChild(root);
 }
