@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f%5B%5D=zodiak@300,400,700,900&display=swap" rel="stylesheet">
 <style>
 :root{
   --rule:#c8ccd1;
@@ -21,7 +20,6 @@
   --body-stack:"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   --display:"Exo 2",system-ui,sans-serif;
   --serif:"Linux Libertine",Georgia,"Times New Roman",Times,serif;
-  --zodiak:"Zodiak",Georgia,serif;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -40,7 +38,7 @@ body{margin:0;background:#fff;color:#000;font-family:var(--body-stack)}
 
 .specimens{
   max-width:1180px;margin:0 auto;padding:1.5rem 1.5rem 0;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0.75rem;align-items:start;
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0.75rem;align-items:start;
 }
 .spec{background:#fff;border:1px solid var(--hair);cursor:pointer}
 .spec.active{border-color:#000;box-shadow:0 0 0 1px #000}
@@ -52,6 +50,7 @@ body{margin:0;background:#fff;color:#000;font-family:var(--body-stack)}
 .spec-row:last-child{border-bottom:0}
 .spec-sample{font-family:var(--display);color:#000;display:block;line-height:1.15}
 .spec-meta{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.5625rem;color:#000;display:block;margin-top:2px}
+.flag{font-family:var(--body-stack);font-size:0.6875rem;color:#000;margin:3px 0 0;padding-left:1.1em}
 .spec-base{font-family:var(--body-stack);color:#000}
 
 .page{max-width:1180px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
@@ -61,8 +60,7 @@ body{margin:0;background:#fff;color:#000;font-family:var(--body-stack)}
 .doc sup{font-size:80%;line-height:1;vertical-align:super}
 .doc i{font-style:italic}
 
-.h1,.h2,.h3,.h4{font-family:var(--display);color:#000;letter-spacing:normal}
-.h1{border-bottom:4px solid var(--rule-blue);display:flow-root}
+.h2,.h3,.h4{font-family:var(--display);color:#000;letter-spacing:normal}
 .h2{border-bottom:2px solid var(--rule);display:flow-root}
 
 blockquote.pull{border-left:3px solid #d8d2c8;padding:0.1em 0 0.1em 1em;margin:1.5em 0}
@@ -83,7 +81,6 @@ table.wt th{background:#fff;font-weight:600}
 
 /* ===== current, Timeless as shipped ===== */
 .mode-current .doc{font-size:15.2px;line-height:1.5}
-.mode-current .h1{font-size:30.4px;font-weight:600;line-height:1.4;margin:0.25em 0 0.5em}
 .mode-current .h2{font-size:27.36px;font-weight:500;line-height:1.4;margin:1.25em 0 0.5em}
 .mode-current .h3{font-size:24.32px;font-weight:400;line-height:1.125;margin:1.25em 0 0.5em}
 .mode-current .h4{font-size:21.28px;font-weight:400;line-height:1.125;margin:1.25em 0 0.5em}
@@ -91,26 +88,24 @@ table.wt th{background:#fff;font-weight:600}
 
 /* ===== minor third, 1.2 ===== */
 .mode-minor .doc{font-size:16px;line-height:1.5}
-.mode-minor .h1{font-size:33.18px;font-weight:700;line-height:1.2;margin:0.2em 0 0.55em}
 .mode-minor .h2{font-size:27.65px;font-weight:600;line-height:1.25;margin:1.5em 0 0.45em}
 .mode-minor .h3{font-size:23.04px;font-weight:600;line-height:1.3;margin:1.6em 0 0.4em}
 .mode-minor .h4{font-size:19.2px;font-weight:600;line-height:1.35;margin:1.7em 0 0.35em}
 
 
 
+/* ===== minor second, 1.067 ===== */
+.mode-second .doc{font-size:16px;line-height:1.5}
+.mode-second .h2{font-size:19.44px;font-weight:600;line-height:1.3;margin:1.5em 0 0.45em}
+.mode-second .h3{font-size:18.22px;font-weight:600;line-height:1.35;margin:1.6em 0 0.4em}
+.mode-second .h4{font-size:17.07px;font-weight:600;line-height:1.4;margin:1.7em 0 0.35em}
+
 /* ===== wikipedia, Vector ===== */
 .mode-wiki .doc{font-size:16px;line-height:1.6}
-.mode-wiki .h1{font-family:var(--serif);font-size:28.8px;font-weight:400;line-height:1.375;margin:0.25em 0 0.5em;border-bottom:1px solid #a2a9b1}
 .mode-wiki .h2{font-family:var(--serif);font-size:24px;font-weight:400;line-height:1.375;margin:1em 0 0.25em;border-bottom:1px solid #a2a9b1}
 .mode-wiki .h3{font-size:19.2px;font-weight:700;line-height:1.6;margin:1em 0 0.25em}
 .mode-wiki .h4{font-size:16px;font-weight:700;line-height:1.6;margin:1em 0 0.25em}
 
-/* ===== wikipedia structure, Zodiak ===== */
-.mode-wikiz .doc{font-size:16px;line-height:1.6}
-.mode-wikiz .h1{font-family:var(--zodiak);font-size:28.8px;font-weight:700;line-height:1.375;margin:0.25em 0 0.5em;border-bottom:1px solid #a2a9b1}
-.mode-wikiz .h2{font-family:var(--zodiak);font-size:24px;font-weight:400;line-height:1.375;margin:1em 0 0.25em;border-bottom:1px solid #a2a9b1}
-.mode-wikiz .h3{font-size:19.2px;font-weight:700;line-height:1.6;margin:1em 0 0.25em}
-.mode-wikiz .h4{font-size:16px;font-weight:700;line-height:1.6;margin:1em 0 0.25em}
 
 
 
@@ -118,19 +113,18 @@ table.wt th{background:#fff;font-weight:600}
 
 /* ===== merged, h4 tightened ===== */
 .mode-m2 .doc{font-size:16px;line-height:1.6}
-.mode-m2 .h1{font-size:32px;font-weight:700;line-height:1.15;margin:0.25em 0 0.5em}
 .mode-m2 .h2{font-size:28px;font-weight:700;line-height:1.25;margin:1.25em 0 0.5em}
 .mode-m2 .h3{font-size:24px;font-weight:600;line-height:1.35;margin:1.25em 0 0.5em}
 .mode-m2 .h4{font-size:18px;font-weight:500;line-height:1.4;margin:1.25em 0 0.5em}
 
 /* ===== alternate ===== */
 .mode-alt .doc{font-size:16px;line-height:1.6}
-.mode-alt .h1{font-size:32px;font-weight:700;line-height:1.15;margin:0.25em 0 0.5em}
 .mode-alt .h2{font-size:26px;font-weight:600;line-height:1.25;margin:1.25em 0 0.5em}
 .mode-alt .h3{font-size:20px;font-weight:600;line-height:1.35;margin:1.25em 0 0.5em}
 .mode-alt .h4{font-size:13px;font-weight:600;font-style:italic;line-height:1.4;text-transform:uppercase;color:#4a4a4a;margin:1.25em 0 0.5em}
 
-@media (max-width:720px){.content{padding:1.25rem 1rem 2rem}}
+@media (max-width:900px){.specimens{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.content{padding:1.25rem 1rem 2rem}.specimens{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body class="mode-m2">
@@ -142,10 +136,10 @@ table.wt th{background:#fff;font-weight:600}
       <button type="button" data-mode="mode-alt" aria-pressed="false">Alternate</button>
       <button type="button" data-mode="mode-current" aria-pressed="false">Current</button>
       <button type="button" data-mode="mode-minor" aria-pressed="false">Minor third</button>
+      <button type="button" data-mode="mode-second" aria-pressed="false">Minor second</button>
       <button type="button" data-mode="mode-wiki" aria-pressed="false">Wikipedia</button>
-      <button type="button" data-mode="mode-wikiz" aria-pressed="false">Wikipedia, Zodiak</button>
     </div>
-    <span class="readout" id="readout">body 16px 1em, 32, 28, 24, 20</span>
+    <span class="readout" id="readout">body 16px 1em, 28, 24, 18</span>
   </div>
 </div>
 
@@ -153,9 +147,8 @@ table.wt th{background:#fff;font-weight:600}
 
 
   <div class="spec" id="spec-mode-m2">
-    <div class="spec-hd"><b>Jet’s Proposal</b><span>32, 28, 24, 18</span></div>
+    <div class="spec-hd"><b>Jet’s Proposal</b><span>28, 24, 18</span></div>
     <div class="spec-body">
-      <div class="spec-row"><span class="spec-sample" style="font-size:32px;font-weight:700">Knight of Santiago</span><span class="spec-meta">h1, 32px, 2em, 700</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:28px;font-weight:700">Background</span><span class="spec-meta">h2, 28px, 1.75em, 700</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:24px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 24px, 1.5em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:18px;font-weight:500">Tencendur</span><span class="spec-meta">h4, 18px, 1.125em, 500</span></div>
@@ -169,9 +162,8 @@ table.wt th{background:#fff;font-weight:600}
 
 
   <div class="spec" id="spec-mode-alt">
-    <div class="spec-hd"><b>Alternate</b><span>32, 26, 20, caps 13</span></div>
+    <div class="spec-hd"><b>Alternate</b><span>26, 20, caps 13</span></div>
     <div class="spec-body">
-      <div class="spec-row"><span class="spec-sample" style="font-size:32px;font-weight:700">Knight of Santiago</span><span class="spec-meta">h1, 32px, 2em, 700</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:26px;font-weight:600">Background</span><span class="spec-meta">h2, 26px, 1.625em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:20px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 20px, 1.25em, 600</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:13px;font-weight:600;font-style:italic;text-transform:uppercase;color:#4a4a4a">Tencendur</span><span class="spec-meta">h4, 13px, 0.813em, 600 caps italic</span></div>
@@ -182,11 +174,10 @@ table.wt th{background:#fff;font-weight:600}
   <div class="spec" id="spec-mode-current">
     <div class="spec-hd"><b>Current</b><span>Timeless, arithmetic</span></div>
     <div class="spec-body">
-      <div class="spec-row"><span class="spec-sample" style="font-size:30.4px;font-weight:600">Knight of Santiago</span><span class="spec-meta">h1, 30.4px, 2em, 600</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:27.36px;font-weight:500">Background</span><span class="spec-meta">h2, 27.36px, 1.8em, 500</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:24.32px;font-weight:400">Boarding Operations</span><span class="spec-meta">h3, 24.32px, 1.6em, 400</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:21.28px;font-weight:400">Tencendur</span><span class="spec-meta">h4, 21.28px, 1.4em, 400</span></div>
-      <div class="spec-row"><span class="spec-base" style="font-size:15.2px">Body copy sets here.</span><span class="spec-meta">body, 15.2px, 0.95em, 400</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:27.36px;font-weight:500">Background</span><span class="spec-meta">h2, 27.36px, 1.8em, 500</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:24.32px;font-weight:400">Boarding Operations</span><span class="spec-meta">h3, 24.32px, 1.6em, 400</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:21.28px;font-weight:400">Tencendur</span><span class="spec-meta">h4, 21.28px, 1.4em, 400</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+      <div class="spec-row"><span class="spec-base" style="font-size:15.2px">Body copy sets here.</span><span class="spec-meta">body, 15.2px, 0.95em, 400</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
     </div>
   </div>
 
@@ -194,33 +185,30 @@ table.wt th{background:#fff;font-weight:600}
   <div class="spec" id="spec-mode-minor">
     <div class="spec-hd"><b>Minor third</b><span>ratio 1.2</span></div>
     <div class="spec-body">
-      <div class="spec-row"><span class="spec-sample" style="font-size:33.18px;font-weight:700">Knight of Santiago</span><span class="spec-meta">h1, 33.18px, 2.074em, 700</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:27.65px;font-weight:600">Background</span><span class="spec-meta">h2, 27.65px, 1.728em, 600</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:23.04px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 23.04px, 1.44em, 600</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:19.2px;font-weight:600">Tencendur</span><span class="spec-meta">h4, 19.2px, 1.2em, 600</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:27.65px;font-weight:600">Background</span><span class="spec-meta">h2, 27.65px, 1.728em, 600</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:23.04px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 23.04px, 1.44em, 600</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:19.2px;font-weight:600">Tencendur</span><span class="spec-meta">h4, 19.2px, 1.2em, 600</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
       <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
     </div>
   </div>
 
 
+
+  <div class="spec" id="spec-mode-second">
+    <div class="spec-hd"><b>Minor second</b><span>ratio 1.067</span></div>
+    <div class="spec-body">
+      <div class="spec-row"><span class="spec-sample" style="font-size:19.44px;font-weight:600">Background</span><span class="spec-meta">h2, 19.44px, 1.215em, 600</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:18.22px;font-weight:600">Boarding Operations</span><span class="spec-meta">h3, 18.22px, 1.138em, 600</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:17.07px;font-weight:600">Tencendur</span><span class="spec-meta">h4, 17.07px, 1.067em, 600</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
+      <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
+    </div>
+  </div>
 
   <div class="spec" id="spec-mode-wiki">
-    <div class="spec-hd"><b>Wikipedia</b><span>serif h1 and h2</span></div>
+    <div class="spec-hd"><b>Wikipedia</b><span>serif h2</span></div>
     <div class="spec-body">
-      <div class="spec-row"><span class="spec-sample" style="font-family:var(--serif);font-size:28.8px;font-weight:400">Knight of Santiago</span><span class="spec-meta">h1, 28.8px, 1.8em, 400 serif</span></div>
       <div class="spec-row"><span class="spec-sample" style="font-family:var(--serif);font-size:24px;font-weight:400">Background</span><span class="spec-meta">h2, 24px, 1.5em, 400 serif</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:19.2px;font-weight:700">Boarding Operations</span><span class="spec-meta">h3, 19.2px, 1.2em, 700</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:16px;font-weight:700">Tencendur</span><span class="spec-meta">h4, 16px, 1em, 700</span></div>
-      <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
-    </div>
-  </div>
-
-  <div class="spec" id="spec-mode-wikiz">
-    <div class="spec-hd"><b>Wikipedia, Zodiak</b><span>Zodiak h1 and h2</span></div>
-    <div class="spec-body">
-      <div class="spec-row"><span class="spec-sample" style="font-family:var(--zodiak);font-size:28.8px;font-weight:700">Knight of Santiago</span><span class="spec-meta">h1, 28.8px, 1.8em, 700 Zodiak</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-family:var(--zodiak);font-size:24px;font-weight:400">Background</span><span class="spec-meta">h2, 24px, 1.5em, 400 Zodiak</span></div>
-      <div class="spec-row"><span class="spec-sample" style="font-size:19.2px;font-weight:700">Boarding Operations</span><span class="spec-meta">h3, 19.2px, 1.2em, 700</span></div>
+      <div class="spec-row"><span class="spec-sample" style="font-size:19.2px;font-weight:700">Boarding Operations</span><span class="spec-meta">h3, 19.2px, 1.2em, 700</span><ul class="flag"><li>uneven pixel heights</li></ul></div>
       <div class="spec-row"><span class="spec-sample" style="font-size:16px;font-weight:700">Tencendur</span><span class="spec-meta">h4, 16px, 1em, 700</span></div>
       <div class="spec-row"><span class="spec-base" style="font-size:16px">Body copy sets here.</span><span class="spec-meta">body, 16px, 1em, 400</span></div>
     </div>
@@ -231,8 +219,6 @@ table.wt th{background:#fff;font-weight:600}
 <div class="page">
 <div class="content">
 <article class="doc">
-
-  <div class="h1">Knight of Santiago</div>
 
   <div class="h2">Background</div>
 
@@ -432,6 +418,21 @@ table.wt th{background:#fff;font-weight:600}
 
   <div class="h2">Navigation</div>
 
+  <table class="navbox">
+    <tr><th class="navbox-title" colspan="2">PanOceania Units</th></tr>
+    <tr><th class="navbox-group">Light Infantry</th><td class="navbox-list navbox-odd"><ul><li><a href="#">Acontecimento Regular</a></li><li><a href="#">Auxilia</a></li><li><a href="#">BCA Magistrate</a></li><li><a href="#">Bipandra</a></li><li><a href="#">Blade-Ops</a></li><li><a href="#">Blink Team</a></li><li><a href="#">Blockers</a></li><li><a href="#">Coadjutor Crosiers</a></li><li><a href="#">Curator</a></li><li><a href="#">Dr. Priya Harper, Archeo-raider</a></li><li><a href="#">Drummers</a></li><li><a href="#">Echo Bravo</a></li><li><a href="#">Emily Handelman</a></li><li><a href="#">Fennec</a></li><li><a href="#">Flight Officer Agnes Ferreira</a></li><li><a href="#">Fusilier</a></li><li><a href="#">Helot Militia</a></li><li><a href="#">Hexa</a></li><li><a href="#">Indigo Spec-Ops</a></li><li><a href="#">Kamau</a></li><li><a href="#">Knight Commander</a></li><li><a href="#">Konstantinos</a></li><li><a href="#">Machinist</a></li><li><a href="#">Minescorp Jackals</a></li><li><a href="#">Nokken</a></li><li><a href="#">Order Sergeant</a></li><li><a href="#">Richard Quinn</a></li><li><a href="#">Tech-Bee</a></li><li><a href="#">Trauma Doc</a></li><li><a href="#">Zulu Cobra</a></li></ul></td></tr>
+    <tr><th class="navbox-group">Medium Infantry</th><td class="navbox-list navbox-even"><ul><li><a href="#">Akalis</a></li><li><a href="#">Bagh Mari</a></li><li><a href="#">Banshee</a></li><li><a href="#">Black A.I.R.</a></li><li><a href="#">Black Friar</a></li><li><a href="#">Crusader Brethren</a></li><li><a href="#">Firefly Squad</a></li><li><a href="#">Gunnar Lundmark</a></li><li><a href="#">Infirmarers of Saint Lazarus</a></li><li><a href="#">Karhu Special Group</a></li><li><a href="#">Kirpal Singh</a></li><li><a href="#">Lieutenant Stephen Rao</a></li><li><a href="#">Neoterra Bolt</a></li><li><a href="#">Nisse</a></li><li><a href="#">Uma Sørensen</a></li><li><a href="#">Vargar</a></li></ul></td></tr>
+    <tr><th class="navbox-group">Heavy Infantry</th><td class="navbox-list navbox-odd"><ul><li><a href="#">Aquila Guard</a></li><li><a href="#">Bøyg Soldiers</a></li><li><a href="#">Father Knight (Team Crux)</a></li><li><a href="#">Gabriele de Fersen</a></li><li><a href="#">Griffin Troop</a></li><li><a href="#">Guarda de Assalto</a></li><li><a href="#">Hetkari Shooters</a></li><li><a href="#">Joan of Arc</a></li><li><a href="#">Joan of Arc 2.0</a></li><li><a href="#">Hospitaller Knight</a></li><li><a href="#">Knight Hospitaller Kyle Hawkins</a></li><li><a href="#">Knights of Justice</a></li><li><a href="#">Knight of Montesa</a></li><li><a href="#">Knight of Santiago</a></li><li><a href="#">Knight of the Holy Sepulchre</a></li><li><a href="#">Motorized Knight of Montesa</a></li><li><a href="#">Orc Troop</a></li><li><a href="#">Patsy Garnett</a></li><li><a href="#">Padre-Inquisidor Mendoza</a></li><li><a href="#">Swiss Guard</a></li><li><a href="#">Teutonic Knight</a></li></ul></td></tr>
+    <tr><th class="navbox-group">Skirmishers</th><td class="navbox-list navbox-even"><ul><li><a href="#">Crocman</a></li><li><a href="#">Locust</a></li><li><a href="#">Scarecrow</a></li><li><a href="#">Trinitarian Tertiaries</a></li></ul></td></tr>
+    <tr><th class="navbox-group">Warbands</th><td class="navbox-list navbox-odd"><ul><li><a href="#">None</a></li></ul></td></tr>
+    <tr><th class="navbox-group">Remotes</th><td class="navbox-list navbox-even"><ul><li><a href="#">Armbot Bulleteer</a></li><li><a href="#">Armbot Peacemaker</a></li><li><a href="#">Auxbot</a></li><li><a href="#">Crabbot</a></li><li><a href="#">Dronbot (Pathfinder, Sierra, Clipper, Fugazi)</a></li><li><a href="#">Mulebot</a></li><li><a href="#">Palbot</a></li></ul></td></tr>
+    <tr><th class="navbox-group">TAGs</th><td class="navbox-list navbox-odd"><ul><li><a href="#">Cutter</a></li><li><a href="#">Dragão</a></li><li><a href="#">Jotum</a></li><li><a href="#">Seraph</a></li><li><a href="#">Squalos MK-II</a></li><li><a href="#">Tikbalang</a></li><li><a href="#">Uhlan</a></li></ul></td></tr>
+    <tr><th class="navbox-group">VH</th><td class="navbox-list navbox-even"><ul><li><a href="#">Redeye</a></li></ul></td></tr>
+    <tr><th class="navbox-group">Discontinued</th><td class="navbox-list navbox-odd"><ul><li><a href="#">Magister Knight</a></li><li><a href="#">Squalo, Armored Cavalry</a></li><li><a href="#">Toni Macayana</a></li></ul></td></tr>
+    <tr><th class="navbox-group">No Profile</th><td class="navbox-list navbox-even"><ul><li><a href="#">Corporate Executive HVT</a></li><li><a href="#">Fusilier Angus</a></li><li><a href="#">Marine Engineering Officer</a></li><li><a href="#">Military Order Grand Master</a></li><li><a href="#">Military Order Operator</a></li></ul></td></tr>
+    <tr><th class="navbox-group">Categories</th><td class="navbox-list navbox-odd"><ul><li><a href="#">PanOceania</a></li><li><a href="#">Acontecimento</a></li><li><a href="#">Military Orders</a></li><li><a href="#">Neoterran</a></li><li><a href="#">Varuna</a></li><li><a href="#">Svalarheima's Winter Force</a></li><li><a href="#">Kestrel Colonial Force</a></li><li><a href="#">Code Capital</a></li></ul></td></tr>
+  </table>
+
   <div class="cats"><b>Categories:</b> Military Orders Units, Starmada Units, Heavy Infantry</div>
 
 </article>
@@ -440,12 +441,12 @@ table.wt th{background:#fff;font-weight:600}
 
 <script>
 var readouts = {
-  'mode-alt':      'body 16px 1em, 32, 26, 20, 13 caps',
-  'mode-m2':       'body 16px 1em, 32, 28, 24, 18',
-  'mode-current':  'body 15.2px 0.95em, 30.4, 27.36, 24.32, 21.28',
-  'mode-minor':    'body 16px 1em, 33.18, 27.65, 23.04, 19.2',
-  'mode-wiki':     'body 16px 1em, 28.8, 24, 19.2, 16',
-  'mode-wikiz':    'body 16px 1em, 28.8, 24, 19.2, 16, Zodiak top two'
+  'mode-alt':      'body 16px 1em, 26, 20, 13 caps',
+  'mode-m2':       'body 16px 1em, 28, 24, 18',
+  'mode-current':  'body 15.2px 0.95em, 27.36, 24.32, 21.28',
+  'mode-minor':    'body 16px 1em, 27.65, 23.04, 19.2',
+  'mode-second':   'body 16px 1em, 19.44, 18.22, 17.07',
+  'mode-wiki':     'body 16px 1em, 24, 19.2, 16'
 };
 function setMode(mode){
   document.body.className = mode;
@@ -464,6 +465,27 @@ document.querySelectorAll('.spec').forEach(function(card){
   card.addEventListener('click', function(){ setMode(card.id.replace('spec-','')); });
 });
 setMode('mode-m2');
+function buildToc(){
+  var root = document.createElement('ul'), stack = [{rank:1, ul:root, n:0}];
+  document.querySelectorAll('.doc .h2, .doc .h3, .doc .h4').forEach(function(h, i){
+    var rank = +h.className.match(/h(\d)/)[1];
+    while (stack.length > 1 && stack[stack.length-1].rank >= rank) stack.pop();
+    var top = stack[stack.length-1];
+    top.n++;
+    h.id = 'h-' + i;
+    var li = document.createElement('li');
+    li.innerHTML = '<a href="#h-' + i + '"><span class="tocnumber"></span><span class="toctext"></span></a>';
+    li.querySelector('.tocnumber').textContent = stack.map(function(x){ return x.n; }).join('.');
+    li.querySelector('.toctext').textContent = h.textContent;
+    top.ul.appendChild(li);
+    var sub = document.createElement('ul');
+    li.appendChild(sub);
+    stack.push({rank:rank, ul:sub, n:0});
+  });
+  root.querySelectorAll('ul:empty').forEach(function(u){ u.remove(); });
+  document.getElementById('toc').appendChild(root);
+}
+buildToc();
 </script>
 
 </body>
